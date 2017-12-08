@@ -42,7 +42,7 @@ FAQ / Non-Automated Setup Tasks
   - Reboot into Recovery OS: reboot holding Cmd+R
   - In Utilities/Terminal, enable with `csrutil enable`
 - Generate SSH keys? Delete `ansible/roles/ssh/defaults/main.yml` and use `ansible-vault create` to make new `defaults/main.yml` with following declared string:
-  - `ssh_passphrase` generate id_rsa with a given passphrase then required on every id_rsa use
+  - `ssh_passphrase` generate id_rsa with a given passphrase then required on every id_rsa use (e.g., `ansible-vault create main.yml`)
   - (Optional) `id_rsa: "{ full path }"` full path to where you want the `id_rsa` file generated (usually `~/.ssh/id_rsa`). Optional since it is in mac_core.yml by default for use in other roles.
   - Want to change the file later? `ansible-vault edit ansible/roles/ssh/defaults/main.yml`
 - Add SSH key to GitHub? `pbcopy < ~/.ssh/id_rsa.pub` -> [GitHub.com/settings/keys](https://github.com/settings/keys)
