@@ -1,14 +1,6 @@
-Andrew's .files
+pythoninthegrass' .files
 ===
-**Ansible provisioning of macOS and Linux with security in mind**
-
-Linux
-===
-1. Installs .ap-aliases, .ap-functions, bash & zsh powerline themes
-```Bash
-$ curl -s https://raw.githubusercontent.com/andrewparadi/.files/master/bootstrap.sh | bash -s
-```
-2. fin.
+**Ansible provisioning of macOS with security in mind**
 
 Mac
 ===
