@@ -229,29 +229,29 @@ function mac_bootstrap {
     exit 0
 }
 
-function linux_bootstrap {
-    status a "Install Linux Base Shell"
-    # Bash Powerline Theme
-    safe_download ~/.bash-powerline.sh https://raw.githubusercontent.com/andrewparadi/.files/master/ansible/roles/bash/files/.bash-powerline.sh
-    safe_source ~/.bash-powerline.sh ~/.bashrc
-
-    # ZSH Powerline Theme
-    safe_download ~/.zsh-powerline.sh https://raw.githubusercontent.com/andrewparadi/.files/master/ansible/roles/zsh/files/.zsh-powerline.sh
-    safe_source ~/.zsh-powerline.sh ~/.zshrc
-
-    # AP-Aliases
-    safe_download ~/.ap-aliases https://raw.githubusercontent.com/andrewparadi/.files/master/ansible/roles/aliases/files/.ap-aliases
-    safe_source ~/.ap-aliases ~/.bashrc
-    safe_source ~/.ap-aliases ~/.zshrc
-
-    # AP-Functions
-    safe_download ~/.ap-functions https://raw.githubusercontent.com/andrewparadi/.files/master/ansible/roles/functions/files/.ap-functions
-    safe_source ~/.ap-functions ~/.bashrc
-    safe_source ~/.ap-functions ~/.zshrc
-
-    status a "🍺  Fin. Bootstrap Script"
-    exit 0
-}
+# function linux_bootstrap {
+#     status a "Install Linux Base Shell"
+#     # Bash Powerline Theme
+#     safe_download ~/.bash-powerline.sh https://raw.githubusercontent.com/andrewparadi/.files/master/ansible/roles/bash/files/.bash-powerline.sh
+#     safe_source ~/.bash-powerline.sh ~/.bashrc
+#
+#     # ZSH Powerline Theme
+#     safe_download ~/.zsh-powerline.sh https://raw.githubusercontent.com/andrewparadi/.files/master/ansible/roles/zsh/files/.zsh-powerline.sh
+#     safe_source ~/.zsh-powerline.sh ~/.zshrc
+#
+#     # AP-Aliases
+#     safe_download ~/.ap-aliases https://raw.githubusercontent.com/andrewparadi/.files/master/ansible/roles/aliases/files/.ap-aliases
+#     safe_source ~/.ap-aliases ~/.bashrc
+#     safe_source ~/.ap-aliases ~/.zshrc
+#
+#     # AP-Functions
+#     safe_download ~/.ap-functions https://raw.githubusercontent.com/andrewparadi/.files/master/ansible/roles/functions/files/.ap-functions
+#     safe_source ~/.ap-functions ~/.bashrc
+#     safe_source ~/.ap-functions ~/.zshrc
+#
+#     status a "🍺  Fin. Bootstrap Script"
+#     exit 0
+# }
 
 status t "Welcome to .files bootstrap!"
 status s "pythoninthegrass https://github.com/pythoninthegrass/.files"
