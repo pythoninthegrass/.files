@@ -58,12 +58,6 @@ FAQ / Non-Automated Setup Tasks
     $ sudo dscl . -create /Users/hiddenuser NFSHomeDirectory /var/hiddenuser
     $ sudo dscl . -delete "/SharePoints/Hidden User's Public Folder"
     ```
-- Syncthing? Installed at `https://127.0.0.1:8384/`
-- Auto-launch Syncthing? [Syncthing docs](https://github.com/syncthing/syncthing/tree/master/etc/macosx-launchd)
-  1. Find Syncthing in brew folder (usually '~/.homebrew/Cellar/syncthing')
-  1. Copy the `syncthing.plist` file to `~/Library/LaunchAgents`.
-  1. Log out and in again, or run `launchctl load
-   ~/Library/LaunchAgents/syncthing.plist`.
 
 Resources
 ---
