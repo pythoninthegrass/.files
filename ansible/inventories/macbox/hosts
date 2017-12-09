@@ -1,5 +1,4 @@
-[macbox]
-127.0.0.1
+[staging]
 
-[linuxbox]
+[prod]
 127.0.0.1
