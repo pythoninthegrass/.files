@@ -190,7 +190,7 @@ function mac_bootstrap {
         cd "$MAIN_DIR/ansible" && ansible-playbook --ask-sudo-pass -i inventories/$INVENTORY plays/provision/$PLAY.yml -e "home=${HOME} user_name=${USER_NAME} homebrew_prefix=${HOMEBREW_DIR} homebrew_install_path=${HOMEBREW_INSTALL_DIR} mas_email=${MAS_EMAIL} mas_password=${MAS_PASSWORD}"
         status b "ansible-playbook | $PLAY @ $INVENTORY"
 
-        if [ "$ONLY_ANSIBLE" = false ]; then
+        if [[ "$ONLY_ANSIBLE" = false ]]; then
             status a "no_animate.macos"
             $SCRIPTS/no_animate.macos
             status b "no_animate.macos"
@@ -206,7 +206,7 @@ function mac_bootstrap {
         cd "$MAIN_DIR/ansible" && ansible-playbook --ask-sudo-pass --ask-vault-pass -i inventories/$INVENTORY plays/provision/$PLAY.yml -e "home=${HOME} user_name=${USER_NAME} homebrew_prefix=${HOMEBREW_DIR} homebrew_install_path=${HOMEBREW_INSTALL_DIR} mas_email=${MAS_EMAIL} mas_password=${MAS_PASSWORD}"
         status b "ansible-playbook :: $PLAY @ $INVENTORY"
 
-        if [ "$ONLY_ANSIBLE" = false ]; then
+        if [[ "$ONLY_ANSIBLE" = false ]]; then
             status a "custom.macos"
             $SCRIPTS/custom.macos
             status b "custom.macos"
