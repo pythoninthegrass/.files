@@ -313,10 +313,10 @@ case "$(uname)" in
     Darwin)   PLATFORM=Darwin
         mac_bootstrap
         ;;
-    Linux)    PLATFORM=Linux
-        LINUX=true
-        linux_bootstrap
-        ;;
+    # Linux)    PLATFORM=Linux
+    #     LINUX=true
+    #     linux_bootstrap
+    #     ;;
     *)        PLATFORM=NULL
         ;;
 esac
