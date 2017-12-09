@@ -3,11 +3,8 @@
 - hosts: macbox
   connection: local
   roles:
-    # - calibre # only needs to be run once
     - etchosts
-    # - oh-my-zsh
     - homebrew
-    - antibody-zsh
     - bash
     - zsh
     - aliases
@@ -17,13 +14,8 @@
     - vim
     - atom
     - ssh #id_rsa key generation
-    - privoxy
-    - syncthing
     - automator-workflows
-    - anaconda
-    # - dnscrypt
-    # - gpg
-    # - mas
+    - mas
     - dockutil
     - macos
     - iterm2
@@ -32,7 +24,7 @@
   become_method: sudo
 
   vars:
-    user_name: me
+    user_name: rhapadmin
     user_group: staff
     home: "~"
     roles_dir: "{{ home }}/.files/ansible/roles"
@@ -48,88 +40,84 @@
       - caskroom/fonts
       - getantibody/homebrew-antibody
     homebrew_installed_packages:
-      - antibody
-      - cheat
-      - dockutil
-      # - gnupg2 # requires java...
-      - htop
-      - mas
-      - node
-      - openssl
-      - privoxy
-      - python
-      - python3
-      - syncthing
-      - tldr
-      - tmux
-      - wget
-      - yarn
+        - arp-scan
+        - arping
+        - bash-completion
+        - cheat
+        - curl, args: [with-openssl]
+        - dockutil
+        - fdupes
+        - git
+        - hardlink-osx
+        - haskell-stack
+        - htop
+        - libnet
+        - mackup
+        - mas
+        - mssql-tools
+        - mycli
+        - neofetch
+        - nmap
+        - node
+        - pandoc
+        - pv
+        - python
+        - python3
+        - rsync
+        - ruby
+        - shellcheck
+        - speedtest_cli
+        - tldr
+        - tmux
+        - tree
+        - vim
+        - watch
+        - wget
+        - yarn
     homebrew_cask_apps:
-      - 1password
-      - adobe-digital-editions
-      - alfred
-      - anaconda # python ML libraries
-      - appcleaner
-      - atom
-      - autodmg
-      - backblaze
-      - backblaze-downloader
-      - bartender
-      - calibre
-      - coda
-      - dash
-      - docker
-      - dropbox
-      - eloston-chromium
-      - firefox
-      # - flux
-      - gmvault
-      - google-chrome
-      - google-chrome-canary
-      - gpgtools-beta
-      - handbrake
-      - handbrakebatch
-      - imagealpha
-      - insomnia
-      - ipartition
-      - iterm2
-      - keybase
-      - kdiff3
-      - ngrok
-      - notational-velocity
-      - microsoft-office
-      - musicbrainz-picard
-      - onedrive
-      - pomello
-      - sqlpro-for-sqlite
-      - skype
-      - slack
-      - spectacle
-      - sublime-text
-      - switch
-      - synology-assistant
-      - the-unarchiver
-      - torbrowser
-      - transmission
-      - viscosity
-      - vlc
-      - whatsapp
-    # fonts
-      - font-arvo # for OAKWEAR & CO.
-      - font-fira-code
-      - font-fira-mono-for-powerline
-      - font-fontawesome
+        - alfred
+        - anki
+        - appcleaner
+        - arq
+        - atext
+        - atom
+        - autodmg
+        - beardedspice
+        - cscreen
+        - dash
+        - docker
+        - dropbox
+        - eloston-chromium
+        - etrecheck
+        - firefox
+        - github
+        - google-backup-and-sync
+        - google-chrome
+        - gotomeeting
+        - iina
+        - imageoptim
+        - iterm2
+        - kitematic
+        - nvalt
+        - omnidisksweeper
+        - packer
+        - platypus
+        - resilio-sync
+        - slack
+        - spectacle
+        - suspicious-package
+        - synergy
+        - table-tool
+        - the-unarchiver
+        - virtualbox
+        - vivaldi
+        - vlc
 
     mas_email: ""
     mas_password: ""
     mas_installed_apps:
-      - { id: 824183456, name: "Affinity Photo" }
-      - { id: 824171161, name: "Affinity Designer" }
-      - { id: 979047768, name: "Browserism for Chrome" }
       - { id: 420212497, name: "Byword (2.8)" }
       - { id: 975937182, name: "Fantastical 2 - Calendar and Reminders" }
-      - { id: 424389933, name: "Final Cut Pro" }
-      - { id: 402989379, name: "iStudiez Pro - Homework, Schedule, Grades" }
       - { id: 409201541, name: "Pages" }
     mas_upgrade_all_apps: no
     mas_signin_dialog: yes
@@ -141,36 +129,15 @@
       - name: Slack
         path: "/Applications/Slack.app"
         pos: 4
-      - name: Messages
-        path: "/Applications/Messages.app"
-        pos: 5
-      - name: WhatsApp
-        path: "/Applications/WhatsApp.app"
-        pos: 6
       - name: Google Chrome
         path: "/Applications/Google Chrome.app"
-        pos: 7
+        pos: 5
       - name: Atom
         path: /Applications/Atom.app
-        pos: 8
-      - name: Byword
-        path: /Applications/Byword.app
-        pos: 9
+        pos: 6
       - name: iTerm
         path: /Applications/iTerm.app
-        pos: 10
-      - name: Preview
-        path: /Applications/Preview.app
-        pos: 11
-      - name: iStudiez Pro
-        path: /Applications/iStudiez Pro.app
-        pos: 12
-      - name: iTunes
-        path: /Applications/iTunes.app
-        pos: 13
-      - name: Pomello
-        path: /Applications/Pomello.app
-        pos: 14
+        pos: 7
       - name: System Preferences
         path: /Applications/System Preferences.app
-        pos: 15
+        pos: 8
