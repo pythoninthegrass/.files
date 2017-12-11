@@ -48,8 +48,8 @@ FAQ / Non-Automated Setup Tasks
 - Add SSH key to GitHub? `pbcopy < ~/.ssh/id_rsa.pub` -> [GitHub.com/settings/keys](https://github.com/settings/keys)
 - `Privoxy` not working? Check that proxy `127.0.0.1:8118` was added to HTTP and HTTPS sections in Airport and Ethernet
 - Want to remove `admin` privileges from a user?
-  - Find `GeneratedUID` of account with `$ dscl . -read /Users/<username> GeneratedUID`
-  - Remove from admin with `$ sudo dscl . -delete /Groups/admin GroupMembers <GeneratedUID>`
+  - Find `GeneratedUID` of account with `dscl . -read /Users/<username> GeneratedUID`
+  - Remove from admin with `sudo dscl . -delete /Groups/admin GroupMembers <GeneratedUID>`
 - Hide a user profile? [Apple docs](https://support.apple.com/en-us/HT203998)
   - Hide from login screen `sudo dscl . create /Users/hiddenuser IsHidden 1`
   - Hide home directory and share point
