@@ -3,22 +3,22 @@
 - hosts: macbox
   connection: local
   roles:
-    - etchosts
-    - homebrew
-    - bash
-    - zsh
-    - aliases
-    - functions
-    - git
-    - tmux
-    - vim
-    - atom
-    - ssh #id_rsa key generation
-    - automator-workflows
-    - mas
-    - dockutil
-    - macos
-    - iterm2
+        - etchosts
+        - homebrew
+        - bash
+        - zsh
+        - aliases
+        - functions
+        - git
+        - tmux
+        - vim
+        - atom
+        - ssh #id_rsa key generation
+        - automator-workflows
+        - mas
+        - dockutil
+        - macos
+        - iterm2
 
   become: yes
   become_method: sudo
@@ -34,11 +34,11 @@
 
     homebrew_cask_require_sha: false
     homebrew_taps:
-      - homebrew/core
-      - caskroom/cask
-      - caskroom/versions
-      - caskroom/fonts
-      - getantibody/homebrew-antibody
+        - homebrew/core
+        - caskroom/cask
+        - caskroom/versions
+        - caskroom/fonts
+        - getantibody/homebrew-antibody
     homebrew_installed_packages:
         - arp-scan
         - arping
@@ -102,7 +102,7 @@
         - omnidisksweeper
         - packer
         - platypus
-        - resilio-sync
+        # - resilio-sync
         - slack
         - spectacle
         - suspicious-package
@@ -116,9 +116,9 @@
     mas_email: ""
     mas_password: ""
     mas_installed_apps:
-      - { id: 420212497, name: "Byword (2.8)" }
-      - { id: 975937182, name: "Fantastical 2 - Calendar and Reminders" }
-      - { id: 409201541, name: "Pages" }
+      # - { id: 420212497, name: "Byword (2.8)" }
+      # - { id: 975937182, name: "Fantastical 2 - Calendar and Reminders" }
+      # - { id: 409201541, name: "Pages" }
     mas_upgrade_all_apps: no
     mas_signin_dialog: yes
 
