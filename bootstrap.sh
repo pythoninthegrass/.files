@@ -114,9 +114,9 @@ function secure_hostname_network {
         exit 0
     else
         SN=$(system_profiler | grep "Serial Number (system)" | awk '{print $4}')
-        scutil --set LocalHostName NPSEA-$SN
-        scutil --set HostName NPSEA-$SN
-        scutil --set ComputerName NPSEA-$SN
+        sudo scutil --set LocalHostName NPSEA-$SN
+        sudo scutil --set HostName NPSEA-$SN
+        sudo scutil --set ComputerName NPSEA-$SN
         defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "NPSEA-$SN"
     fi
 
