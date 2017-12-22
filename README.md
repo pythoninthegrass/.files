@@ -9,7 +9,7 @@ Mac
 3. Enable Filevault and restart
 4. Provision with command below in Terminal (add any other option flags before running)
 ```Bash
-cd ${HOME}/; curl -sO https://raw.githubusercontent.com/pythoninthegrass/.files/master/bootstrap.sh; chmod +x ${HOME}/bootstrap.sh; ${HOME}/bootstrap.sh -s; rm ${HOME}/bootstrap.sh
+cd ${HOME}/; curl -sO https://raw.githubusercontent.com/pythoninthegrass/ansible.files/master/bootstrap.sh; chmod +x ${HOME}/bootstrap.sh; ${HOME}/bootstrap.sh -s; rm ${HOME}/bootstrap.sh
 ```
 5. Reboot (sometimes required) and fin.
 
