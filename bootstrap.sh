@@ -175,7 +175,8 @@ function mac_bootstrap {
     status b "xcode-select, git, homebrew, ansible"
     if [[ $PLAY == "mac_etchost_no_animate" ]]; then
         status a "ansible-playbook | $PLAY @ $INVENTORY"
-        cd "$MAIN_DIR/ansible" && ansible-playbook --ask-sudo-pass -i inventories/$INVENTORY plays/provision/$PLAY.yml -e "home=${HOME} user_name=${USER_NAME} homebrew_prefix=${HOMEBREW_DIR} homebrew_install_path=${HOMEBREW_INSTALL_DIR} mas_email=${MAS_EMAIL} mas_password=${MAS_PASSWORD}"
+        cd "$MAIN_DIR/ansible" || exit 1
+        ansible-playbook --ask-sudo-pass -i inventories/$INVENTORY plays/provision/$PLAY.yml -e "home=${HOME} user_name=${USER_NAME} homebrew_prefix=${HOMEBREW_DIR} homebrew_install_path=${HOMEBREW_INSTALL_DIR} mas_email=${MAS_EMAIL} mas_password=${MAS_PASSWORD}"
         status b "ansible-playbook | $PLAY @ $INVENTORY"
 
         if [[ "$ONLY_ANSIBLE" = false ]]; then
@@ -186,12 +187,16 @@ function mac_bootstrap {
 
     elif [[ $PLAY == "mac_jekyll" ]]; then
         status a "ansible-playbook :: $PLAY @ $INVENTORY"
-        cd "$MAIN_DIR/ansible" && ansible-playbook --ask-sudo-pass -i inventories/$INVENTORY plays/provision/$PLAY.yml -e "home=${HOME} user_name=${USER_NAME} homebrew_prefix=${HOMEBREW_DIR} homebrew_install_path=${HOMEBREW_INSTALL_DIR} mas_email=${MAS_EMAIL} mas_password=${MAS_PASSWORD}"
+        cd "$MAIN_DIR/ansible" || exit 1
+        ansible-playbook --ask-sudo-pass -i inventories/$INVENTORY plays/provision/$PLAY.yml -e "home=${HOME} user_name=${USER_NAME} homebrew_prefix=${HOMEBREW_DIR} homebrew_install_path=${HOMEBREW_INSTALL_DIR} mas_email=${MAS_EMAIL} mas_password=${MAS_PASSWORD}"
         status b "ansible-playbook :: $PLAY @ $INVENTORY"
 
     else
         status a "ansible-playbook :: $PLAY @ $INVENTORY"
-        cd "$MAIN_DIR/ansible" && ansible-playbook --ask-sudo-pass --ask-vault-pass -i inventories/$INVENTORY plays/provision/$PLAY.yml -e "home=${HOME} user_name=${USER_NAME} homebrew_prefix=${HOMEBREW_DIR} homebrew_install_path=${HOMEBREW_INSTALL_DIR} mas_email=${MAS_EMAIL} mas_password=${MAS_PASSWORD}"
+        cd "$MAIN_DIR/ansible" || exit 1
+        # TODO: add error handling for FV2 (e.g., if fv2 = true; then --ask-vault-pass; fi)
+        # ansible-playbook --ask-sudo-pass --ask-vault-pass -i inventories/$INVENTORY plays/provision/$PLAY.yml -e "home=${HOME} user_name=${USER_NAME} homebrew_prefix=${HOMEBREW_DIR} homebrew_install_path=${HOMEBREW_INSTALL_DIR} mas_email=${MAS_EMAIL} mas_password=${MAS_PASSWORD}"
+        ansible-playbook --ask-sudo-pass -i inventories/$INVENTORY plays/provision/$PLAY.yml -e "home=${HOME} user_name=${USER_NAME} homebrew_prefix=${HOMEBREW_DIR} homebrew_install_path=${HOMEBREW_INSTALL_DIR} mas_email=${MAS_EMAIL} mas_password=${MAS_PASSWORD}"
         status b "ansible-playbook :: $PLAY @ $INVENTORY"
 
         if [[ "$ONLY_ANSIBLE" = false ]]; then
