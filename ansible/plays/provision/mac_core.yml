@@ -16,7 +16,7 @@
         - macos
         - mas
         - ssh #id_rsa key generation
-        - tmux
+        # - tmux
         - vim
         # - zsh
 
