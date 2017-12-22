@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # https://github.com/karek314/macOS-home-call-drop
 # Updated Apr 9, 2017
 
 DAEMONS=()
-DAEMONS+=('com.apple.netbiosd') #Netbiosd is microsoft's networking service. used to share files between mac and windows
+# DAEMONS+=('com.apple.netbiosd') #Netbiosd is microsoft's networking service. used to share files between mac and windows
 #DAEMONS+=('com.apple.preferences.timezone.admintool') #Time setting daemon
 #DAEMONS+=('com.apple.preferences.timezone.auto') #Time setting daemon
 #DAEMONS+=('com.apple.remotepairtool') #Pairing devices remotely
@@ -16,7 +16,7 @@ DAEMONS+=('com.apple.familycontrols') #Parent control
 #DAEMONS+=('com.apple.findmymac') #Find my mac daemon
 #DAEMONS+=('com.apple.AirPlayXPCHelper') #Airplay daemon
 DAEMONS+=('com.apple.SubmitDiagInfo') #Feedback - most likely it submits your computer data when click 'About this mac'
-DAEMONS+=('com.apple.screensharing') #Screensharing daemon
+# DAEMONS+=('com.apple.screensharing') #Screensharing daemon
 DAEMONS+=('com.apple.appleseed.fbahelperd') #Related to feedback
 #DAEMONS+=('com.apple.apsd') #Apple Push Notification Service (apsd) - it's calling home quite often + used by Facetime and Messages
 # DAEMONS+=('com.apple.AOSNotificationOSX') #Notifications
@@ -31,7 +31,7 @@ DAEMONS+=('com.apple.appleseed.fbahelperd') #Related to feedback
 #DAEMONS+=('com.apple.laterscheduler') #Schedule something?
 DAEMONS+=('com.apple.awacsd') #Apple Wide Area Connectivity Service daemon - Back to My Mac Feature
 #DAEMONS+=('com.apple.eapolcfg_auth') #perform privileged operations required by certain EAPOLClientConfiguration.h APIs
-DAEMONS+=('com.apple.awdd') #Sending out diagnostics & usage
+# DAEMONS+=('com.apple.awdd') #Sending out diagnostics & usage
 DAEMONS+=('com.apple.CrashReporterSupportHelper') #Crash reporter
 #DAEMONS+=('com.apple.trustd') #Propably related to certificates
 
@@ -68,7 +68,7 @@ AGENTS+=('com.apple.appleseed.seedusaged') #Feedback assistant
 #AGENTS+=('com.apple.cloudd') #Related to sync data to iCloud, most likely used by iMessage,Mail,iCloud drive, etc...
 #AGENTS+=('com.apple.assistant') #Keychain
 AGENTS+=('com.apple.parentalcontrols.check') #Related to parental control
-AGENTS+=('com.apple.parsecd') #Used by spotlight and/or siri, propably some suggestions - CoreParsec.framework
+# AGENTS+=('com.apple.parsecd') #Used by spotlight and/or siri, propably some suggestions - CoreParsec.framework
 #AGENTS+=('com.apple.identityservicesd') #Used to auth some apps, as well used by iCloud
 #AGENTS+=('com.apple.bird') #Part of iCloud
 AGENTS+=('com.apple.rtcreportingd') #Related to Home Sharing, most likely it checks if device is auth for home sharing + Facetime
