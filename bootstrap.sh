@@ -17,7 +17,7 @@ exec &> >(tee -a "$ansiLog")
 loggedInUser=$(stat -f%Su /dev/console)
 
 # Working directory
-scriptDir=$(cd "$(dirname "$0")" && pwd)
+# scriptDir=$(cd "$(dirname "$0")" && pwd)
 
 # Ansible ENV variables
 ONLY_ANSIBLE=false                  # -a
@@ -40,8 +40,8 @@ function status() {
     Green="$(tput setaf 2)"        # Green
     Blue="$(tput setaf 4)"         # Blue
     div="********************************************************************************"
-    if [ "$#" -lt 3 ]; then   # if no name override passed in, take name "ap" if $0 is status, $0 otherwise
-        [ $(basename "${0}") = "status" ] && scriptname="ap" || scriptname=$(basename "${0}")
+    if [[ "$#" -lt 3 ]]; then   # if no name override passed in, take name "ap" if $0 is status, $0 otherwise
+        [[ $(basename "${0}") = "status" ]] && scriptname="ap" || scriptname=$(basename "${0}")
     else
         scriptname="${3}"
     fi
@@ -56,7 +56,7 @@ function status() {
 
 function safe_download {
     timestamp="`date '+%Y%m%d-%H%M%S'`"
-    if [ ! -f "$1" ]; then
+    if [[ ! -f "$1" ]]; then
         status a "Download ${1}"
         curl -s -o $1 $2
         status b "Download ${1}"
@@ -170,7 +170,7 @@ function mac_bootstrap {
 
     if [[ ! -d $MAIN_DIR ]]; then
         status a "Clone .files"
-        git clone https://github.com/pythoninthegrass/.files.git $MAIN_DIR
+        git clone https://github.com/pythoninthegrass/ansible.files.git $MAIN_DIR
         status b "Clone .files"
     elif [[ "$TEST" == false ]]; then
         status a "Decapitate .files (headless mode)"
@@ -254,7 +254,7 @@ function mac_bootstrap {
 # }
 
 status t "Welcome to .files bootstrap!"
-status s "pythoninthegrass https://github.com/pythoninthegrass/.files"
+status s "pythoninthegrass https://github.com/pythoninthegrass/ansible.files"
 
 status a "📈  Registered Configuration"
 while getopts "h?ad:b:i:p:m:n:sltu:" opt; do
@@ -313,10 +313,10 @@ case "$(uname)" in
     Darwin)   PLATFORM=Darwin
         mac_bootstrap
         ;;
-    # Linux)    PLATFORM=Linux
-    #     LINUX=true
-    #     linux_bootstrap
-    #     ;;
+    Linux)    PLATFORM=Linux
+        LINUX=true
+        linux_bootstrap
+        ;;
     *)        PLATFORM=NULL
         ;;
 esac
