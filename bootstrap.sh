@@ -80,7 +80,7 @@ function show_help {
     echo "-h      |   Show help menu                    |                         "
     echo "-a      |   Only run Ansible Playbook         |   Def: runs .macos      "
     echo "-d      |   .files/ directory                 |   ${HOME}/.files        "
-    echo "-b      |   Homebrew install directory        |   ${HOME}/.homebrew     "
+    echo "-b      |   Homebrew install directory        |   ${HOMEBREW_DIR}       "
     echo "        |       Homebrew default              |   /usr/local            "
     echo "-i      |   Ansible Inventory                 |   macbox/hosts          "
     echo "-p      |   Ansible Playbook                  |                         "
@@ -119,18 +119,6 @@ function secure_hostname_network {
         sudo scutil --set ComputerName NPSEA-$SN
         defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "NPSEA-$SN"
     fi
-
-    # enable firewall, logging, and stealth mode
-    # /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
-    # /usr/libexec/ApplicationFirewall/socketfilterfw --setloggingmode on
-    # /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
-    #
-    # # stop firewall auto-whitelist by all software
-    # /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsigned off
-    # /usr/libexec/ApplicationFirewall/socketfilterfw --setallowsignedapp off
-
-    # reboot network interfaces
-    # networksetup -setairportpower en0 on
 
     # sleep 5
     # status b "🔐  Host Name: ${MAC_NAME}. Firewall: On."
@@ -229,29 +217,14 @@ function mac_bootstrap {
     exit 0
 }
 
-# function linux_bootstrap {
-#     status a "Install Linux Base Shell"
-#     # Bash Powerline Theme
-#     safe_download ~/.bash-powerline.sh https://raw.githubusercontent.com/andrewparadi/.files/master/ansible/roles/bash/files/.bash-powerline.sh
-#     safe_source ~/.bash-powerline.sh ~/.bashrc
-#
-#     # ZSH Powerline Theme
-#     safe_download ~/.zsh-powerline.sh https://raw.githubusercontent.com/andrewparadi/.files/master/ansible/roles/zsh/files/.zsh-powerline.sh
-#     safe_source ~/.zsh-powerline.sh ~/.zshrc
-#
-#     # AP-Aliases
-#     safe_download ~/.ap-aliases https://raw.githubusercontent.com/andrewparadi/.files/master/ansible/roles/aliases/files/.ap-aliases
-#     safe_source ~/.ap-aliases ~/.bashrc
-#     safe_source ~/.ap-aliases ~/.zshrc
-#
-#     # AP-Functions
-#     safe_download ~/.ap-functions https://raw.githubusercontent.com/andrewparadi/.files/master/ansible/roles/functions/files/.ap-functions
-#     safe_source ~/.ap-functions ~/.bashrc
-#     safe_source ~/.ap-functions ~/.zshrc
-#
-#     status a "🍺  Fin. Bootstrap Script"
-#     exit 0
-# }
+function linux_bootstrap {
+    status a "Install Linux Base Shell"
+    # Bash Powerline Theme
+    safe_download ~/.bash-powerline.sh https://raw\.githubusercontent\.com/pythoninthegrass/ansible.files/master/ansible/roles/bash/files/.bash-powerline.sh
+    safe_source ~/.bash-powerline.sh ~/.bashrc
+    status a "🍺  Fin. Bootstrap Script"
+    exit 0
+}
 
 status t "Welcome to .files bootstrap!"
 status s "pythoninthegrass https://github.com/pythoninthegrass/ansible.files"
@@ -321,5 +294,5 @@ case "$(uname)" in
         ;;
 esac
 
-status err "Unknown Error. Maybe invalid platform (Only works on Mac or Linux)."
+status e "Unknown Error. Maybe invalid platform (Only works on Mac or Linux)."
 exit 1

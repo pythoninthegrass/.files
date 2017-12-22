@@ -15,13 +15,15 @@ homebrew_installed_packages: []
 
 homebrew_uninstalled_packages: []
 
-homebrew_upgrade_all_packages: no
+homebrew_upgrade_all_packages: yes
 
 homebrew_taps:
-  - homebrew/core
-  - caskroom/cask
-  - caskroom/cask
-  - caskroom/versions
+    - buo/cask-upgrade
+    - caskroom/cask
+    - caskroom/versions
+    - homebrew/bundle
+    - homebrew/core
+    - homebrew/dupes
 
 homebrew_cask_apps: []
 

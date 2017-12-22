@@ -3,22 +3,22 @@
 - hosts: macbox
   connection: local
   roles:
-        - etchosts
-        - homebrew
-        - bash
-        - zsh
         - aliases
+        # - automator-workflows
+        - atom
+        - bash
+        - dockutil
+        # - etchosts
         - functions
         - git
+        - homebrew
+        - iterm2
+        - macos
+        - mas
+        - ssh #id_rsa key generation
         - tmux
         - vim
-        - atom
-        - ssh #id_rsa key generation
-        - automator-workflows
-        - mas
-        - dockutil
-        - macos
-        - iterm2
+        # - zsh
 
   become: yes
   become_method: sudo
@@ -32,13 +32,38 @@
 
     filevault_auto_evict: true
 
+    mas_email: ""
+    mas_password: ""
+    mas_installed_apps:
+        - { id: id: 1091189122 name : "Bear" }
+        - { id: 420212497 name : "Byword" }
+        - { id: 641027709 name : "Color Picker" }
+        - { id: 435003921 name : "Fantastical" }
+        - { id: 409183694 name : "Keynote" }
+        - { id: 430255202 name : "Mactracker" }
+        - { id: 441258766 name : "Magnet" }
+        - { id: 715768417 name : "Microsoft Remote Desktop" }
+        - { id: 409203825 name : "Numbers" }
+        - { id: 409201541 name : "Pages" }
+        - { id: 429449079 name : "Patterns" }
+        - { id: 407963104 name : "Pixelmator" }
+        - { id: 1318160354 name : "ReignsHerMajesty" }
+        - { id: 409907375 name : "Remote Desktop" }
+        - { id: 1073245945 name : "StatsCenter" }
+        - { id: 1262957439 name : "Textual 7" }
+
+    mas_upgrade_all_apps: no
+    mas_signin_dialog: yes
+
     homebrew_cask_require_sha: false
     homebrew_taps:
-        - homebrew/core
+        - buo/cask-upgrade
         - caskroom/cask
-        - caskroom/versions
         - caskroom/fonts
-        - getantibody/homebrew-antibody
+        - caskroom/versions
+        - homebrew/bundle
+        - homebrew/core
+        - homebrew/dupes
     homebrew_installed_packages:
         - arp-scan
         - arping
@@ -87,7 +112,6 @@
         - dash
         - docker
         - dropbox
-        - eloston-chromium
         - etrecheck
         - firefox
         - github
@@ -102,7 +126,7 @@
         - omnidisksweeper
         - packer
         - platypus
-        # - resilio-sync
+        - resilio-sync
         - slack
         - spectacle
         - suspicious-package
@@ -113,31 +137,58 @@
         - vivaldi
         - vlc
 
-    mas_email: ""
-    mas_password: ""
-    mas_installed_apps:
-      # - { id: 420212497, name: "Byword (2.8)" }
-      # - { id: 975937182, name: "Fantastical 2 - Calendar and Reminders" }
-      # - { id: 409201541, name: "Pages" }
-    mas_upgrade_all_apps: no
-    mas_signin_dialog: yes
-
     dockitems_to_persist:
+      - name: App Store
+        path: "/Applications/App Store.app"
+        pos: 1
+      - name: iTerm
+        path: "/Applications/iTerm.app"
+        pos: 2
       - name: Mail
         path: "/Applications/Mail.app"
         pos: 3
-      - name: Slack
-        path: "/Applications/Slack.app"
-        pos: 4
       - name: Google Chrome
         path: "/Applications/Google Chrome.app"
+        pos: 4
+      - name: Firefox
+        path: "/Applications/Firefox.app"
         pos: 5
       - name: Atom
-        path: /Applications/Atom.app
+        path: "/Applications/Atom.app"
         pos: 6
-      - name: iTerm
-        path: /Applications/iTerm.app
+      - name: Visual Studio Code
+        path: "/Applications/Visual Studio Code.app"
         pos: 7
-      - name: System Preferences
-        path: /Applications/System Preferences.app
+      - name: GitHub Desktop
+        path: "/Applications/GitHub Desktop.app"
         pos: 8
+      - name: Calendar
+        path: "/Applications/Calendar.app"
+        pos: 9
+      - name: Reminders
+        path: "/Applications/Reminders.app"
+        pos: 10
+      - name: Bear
+        path: "/Applications/Bear.app"
+        pos: 11
+      - name: YakYak
+        path: "/Applications/YakYak.app"
+        pos: 12
+      - name: Slack
+        path: "/Applications/Slack.app"
+        pos: 13
+      - name: Remote Desktop
+        path: "/Applications/Remote Desktop.app"
+        pos: 14
+      - name: Microsoft Remote Desktop
+        path: "/Applications/Microsoft Remote Desktop.app"
+        pos: 15
+      - name: Pages
+        path: "/Applications/Pages.app"
+        pos: 16
+      - name: Numbers
+        path: "/Applications/Numbers.app"
+        pos: 17
+      - name: System Preferences
+        path: "/Applications/System Preferences.app"
+        pos: 18

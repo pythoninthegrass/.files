@@ -1,8 +1,12 @@
-# By Andrew Paradi | Source at https://github.com/andrewparadi/.files
 #!/usr/bin/env bash
 
+# SOURCE Andrew Paradi | https://github.com/andrewparadi/.files
+
+<<<<<<< HEAD
+=======
 # https://github.com/mathiasbynens/dotfiles/blob/master/.aliases
 
+>>>>>>> andrewparadi/master
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -10,18 +14,42 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
+<<<<<<< HEAD
 alias l="ls -la"
+=======
 
-# Dir Shortcuts
+#Functions
+# alias l="ls -la" || "k -a" => ap-functions::l()
+alias l="safe_k"
+alias ka="killall"
+
+#Syncthing
+alias st="syncthing"
+
+#Jupyter
+alias jn="jupyter notebook"
+>>>>>>> andrewparadi/master
+
+# Directory Shortcuts
 alias .f="cd ~/.files"
-alias d="cd ~/Dropbox"
+alias dx="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias sr="cd ~/src"
+alias sra="cd ~/src/ape"
+alias srg="cd ~/src/github.com"
+alias sri="cd ~/src/interviews"
+alias srj="cd ~/src/jupyter"
+alias sru="cd ~/src/uw"
 alias ap="cd ~/src/github.com/andrewparadi.github.io"
+<<<<<<< HEAD
 alias uw="cd ~/docs/UW/4b"
 
 # UWaterloo
+=======
+alias qa="cd ~/src/github.com/Quantular-API"
+alias qw="cd ~/src/github.com/Quantular-Web-Client"
+>>>>>>> andrewparadi/master
 
 # UW SSH
 alias uwssh="ssh -4 -i ~/.ssh/id_rsa -Y adsparad@ubuntu1604-006.student.cs.uwaterloo.ca"
@@ -31,6 +59,7 @@ alias uwssh458="ssh adsparad@ugster19.student.cs.uwaterloo.ca"
 alias uw458scp="scp -r adsparad@ugster19.student.cs.uwaterloo.ca:uml/share/* ./"
 alias uwscp458="scp -r ./ adsparad@ugster19.student.cs.uwaterloo.ca:uml/share/"
 
+<<<<<<< HEAD
 case "$(uname)" in
     Darwin)   PLATFORM=Darwin
               uwsrc="${HOME}/src/uw"
@@ -49,6 +78,21 @@ alias 451="cd ${uwsrc}/cs451${post}"
 alias 454="cd ${uwsrc}/cs454${post}"
 alias 487="cd ${uwsrc}/co487${post}"
 alias 492="cd ${uwsrc}/cs492${post}"
+=======
+# UW Directories
+case "$(uname)" in
+    Darwin)   uwsrc="${HOME}/src/uw";   uwpost="-work"  ;;
+    Linux)    uwsrc="${HOME}";          uwpost=""       ;;
+    *)                                                  ;;
+esac
+alias uw="cd ~/docs/UW/4b"
+alias 456="cd ${uwsrc}/cs456${uwpost}"
+alias 458="cd ${uwsrc}/cs458${uwpost}"
+alias 451="cd ${uwsrc}/cs451${uwpost}"
+alias 454="cd ${uwsrc}/cs454${uwpost}"
+alias 487="cd ${uwsrc}/co487${uwpost}"
+alias 492="cd ${uwsrc}/cs492${uwpost}"
+>>>>>>> andrewparadi/master
 
 #Git
 alias gs="git status"
@@ -59,6 +103,7 @@ alias gra="git remote add"
 alias gl="git log --oneline"
 alias gr="git rebase -i"
 
+<<<<<<< HEAD
 #Functions
 alias ka="killall"
 
@@ -68,6 +113,8 @@ alias st="syncthing"
 #Jupyter
 alias jn="jupyter notebook"
 
+=======
+>>>>>>> andrewparadi/master
 #Web Download files off of a webpage
 # - Every file: wd ""  {url}
 # - Only with extension: wd pdf {url}
@@ -92,6 +139,7 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 # Clear Homebrew cache
 # Determine platform
 case "$(uname)" in
+<<<<<<< HEAD
     Darwin)   alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'; rm -rf `brew --cache`"
               ;;
     Linux)    alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash"
@@ -99,6 +147,13 @@ case "$(uname)" in
     *)        alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash"
               ;;
 esac
+=======
+    Darwin)   et="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'; rm -rf `brew --cache`" ;;
+    Linux)    et="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash"  ;;
+    *)        et="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash"  ;;
+esac
+alias emptytrash="$et"
+>>>>>>> andrewparadi/master
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
