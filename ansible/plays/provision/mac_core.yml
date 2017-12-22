@@ -35,7 +35,7 @@
     mas_email: ""
     mas_password: ""
     mas_installed_apps:
-        - { id: id: 1091189122 name : "Bear" }
+        - { id: 1091189122 name : "Bear" }
         - { id: 420212497 name : "Byword" }
         - { id: 641027709 name : "Color Picker" }
         - { id: 435003921 name : "Fantastical" }
