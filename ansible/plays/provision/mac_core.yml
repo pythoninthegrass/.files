@@ -35,22 +35,22 @@
     mas_email: ""
     mas_password: ""
     mas_installed_apps:
-        - { id: 1091189122 name : "Bear" }
-        - { id: 420212497 name : "Byword" }
-        - { id: 641027709 name : "Color Picker" }
-        - { id: 435003921 name : "Fantastical" }
-        - { id: 409183694 name : "Keynote" }
-        - { id: 430255202 name : "Mactracker" }
-        - { id: 441258766 name : "Magnet" }
-        - { id: 715768417 name : "Microsoft Remote Desktop" }
-        - { id: 409203825 name : "Numbers" }
-        - { id: 409201541 name : "Pages" }
-        - { id: 429449079 name : "Patterns" }
-        - { id: 407963104 name : "Pixelmator" }
-        - { id: 1318160354 name : "ReignsHerMajesty" }
-        - { id: 409907375 name : "Remote Desktop" }
-        - { id: 1073245945 name : "StatsCenter" }
-        - { id: 1262957439 name : "Textual 7" }
+        - { id: 1091189122 name: "Bear" }
+        - { id: 420212497 name: "Byword" }
+        - { id: 641027709 name: "Color Picker" }
+        - { id: 435003921 name: "Fantastical" }
+        - { id: 409183694 name: "Keynote" }
+        - { id: 430255202 name: "Mactracker" }
+        - { id: 441258766 name: "Magnet" }
+        - { id: 715768417 name: "Microsoft Remote Desktop" }
+        - { id: 409203825 name: "Numbers" }
+        - { id: 409201541 name: "Pages" }
+        - { id: 429449079 name: "Patterns" }
+        - { id: 407963104 name: "Pixelmator" }
+        - { id: 1318160354 name: "ReignsHerMajesty" }
+        - { id: 409907375 name: "Remote Desktop" }
+        - { id: 1073245945 name: "StatsCenter" }
+        - { id: 1262957439 name: "Textual 7" }
 
     mas_upgrade_all_apps: no
     mas_signin_dialog: yes
