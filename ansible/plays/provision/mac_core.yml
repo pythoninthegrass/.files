@@ -15,7 +15,7 @@
         - iterm2
         - macos
         - mas
-        - ssh #id_rsa key generation
+        # - ssh #id_rsa key generation
         # - tmux
         - vim
         # - zsh
